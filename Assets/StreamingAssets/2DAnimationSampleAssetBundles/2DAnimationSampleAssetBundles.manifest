@@ -1,0 +1,11 @@
+ManifestFileVersion: 0
+UnityVersion: 2023.2.20f1
+CRC: 1363614016
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: rikrpoison
+      Dependencies: {}
+    Info_1:
+      Name: rikrrage
+      Dependencies: {}
