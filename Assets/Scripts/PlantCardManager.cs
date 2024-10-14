@@ -75,6 +75,8 @@ public class PlantCardManager : MonoBehaviour
         }
 		else
 		{
+            Debug.Log("인덱스: " + index + "선택 완료");
+
             selectedIndexes.Add(index);
 
             GameObject card = Instantiate(cardPrefab, cardHolderTransform);
@@ -104,7 +106,6 @@ public class PlantCardManager : MonoBehaviour
 
     public void AddPlantCardSelection(int index)
     {
-        Debug.Log("인덱스: " + index + "설치 완료");
 
         GameObject card = Instantiate(selectionCardPrefab, selectionTransform);
         CardManager cardManager = card.GetComponent<CardManager>();
