@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour
     public TMP_Text coinDisplay;
 
     public HealthManager HealthBar;
-    public GameObject gameOverScreen;
 
     private void Start()
     {
@@ -100,7 +99,7 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        gameOverScreen.SetActive(true);
+
     }
 
 	public void OnApplicationQuit()

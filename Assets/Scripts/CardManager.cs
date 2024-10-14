@@ -35,10 +35,10 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (isSelection)
-        {
+		if (isSelection)
+		{
             return;
-        }
+		}
 
         if (isCoolingDown)
         {
@@ -82,22 +82,22 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (isSelection)
-        {
-            //Click on this, add reference to bar
+		if (isSelection)
+		{
+			//Click on this, add reference to bar
             isSelected = true;
             plantCardManager.AddPlantReference(plantCardScriptableObject, this.gameObject.GetComponent<CardManager>());
         }
         else
-        {
-            if (!isGameStart)
-            {
+		{
+			if (!isGameStart)
+			{
                 //Deselect card
                 parentCard.isSelected = isSelected = false;
                 plantCardManager.AddPlantReference(plantCardScriptableObject);
             }
-            else
-            {
+			else
+			{
                 if (isCoolingDown)
                 {
                     return;
@@ -125,10 +125,10 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (isSelection)
-        {
+		if (isSelection)
+		{
             return;
-        }
+		}
 
         if (isCoolingDown)
         {
@@ -139,8 +139,6 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
         {
             if (colliderName != null && !colliderName.isOccupied)
             {
-                Debug.Log("Place Plant"); // 식물 설치
-
                 GameObject.FindObjectOfType<GameManager>().DeductSun(plantCardScriptableObject.cost);
                 isHoldingPlant = false;
                 colliderName.isOccupied = true;
@@ -152,7 +150,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
 
                 BoxCollider2D boxColl = plant.AddComponent<BoxCollider2D>();
                 boxColl.size = plantCardScriptableObject.colliderSize;
-
+                
                 CircleCollider2D circleColl = plant.AddComponent<CircleCollider2D>();
                 circleColl.radius = plantCardScriptableObject.radius;
 
@@ -162,7 +160,7 @@ public class CardManager : MonoBehaviour, IDragHandler, IPointerUpHandler, IPoin
                 plant.GetComponent<PlantManager>().isDragging = false;
                 if (plantCardScriptableObject.isSunFlower)
                 {
-                    SunSpawner sunSpawner = plant.AddComponent<SunSpawner>();
+                    SunSpawner sunSpawner  = plant.AddComponent<SunSpawner>();
                     sunSpawner.isSunFlower = true;
                     sunSpawner.minTime = plantCardScriptableObject.sunSpawnerTemplate.minTime;
                     sunSpawner.maxTime = plantCardScriptableObject.sunSpawnerTemplate.maxTime;
