@@ -121,8 +121,8 @@ public class ZombieController : MonoBehaviour
 
             Transform head = this.transform.GetChild(0);
 
-            head.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-            head.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
+            //head.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            //head.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
 
             head.SetParent(null);
 

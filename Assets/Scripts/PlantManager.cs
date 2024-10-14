@@ -100,14 +100,17 @@ public class PlantManager : MonoBehaviour
 
         if (!isMine)
         {
+            Debug.Log("isMine이 아님 ㅋㅋ ㅅㄱ");
             if (speed > 0)
             {
+                Debug.Log("speed >0 임 ㅋㅋ");
                 RaycastHit2D hit = Physics2D.Raycast(shootPoint.position, shootPoint.right, range, zombieLayer);
 
                 Debug.DrawRay(shootPoint.position, shootPoint.right, Color.red);
 
                 if (hit)
                 {
+                    Debug.Log("힛이 안 됨 ");
                     Debug.Log("Attacking Info plant name : " + this.gameObject.name + ", gameObject name : " + hit.collider.name + ", tag : " + hit.collider.tag);
 
                     if (hit.transform.tag == "Zombie")
