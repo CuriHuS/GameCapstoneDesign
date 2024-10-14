@@ -113,9 +113,9 @@ public class ZombieController : MonoBehaviour
 
 				if (randomInt <= ((thisZombieSO.coinDropPercent / 100) * 100))
 				{
-                    GameObject coinObj = Instantiate(coinPrefab, this.transform);
+                    //GameObject coinObj = Instantiate(coinPrefab, this.transform);
 
-                    coinObj.transform.parent = null;
+                    //coinObj.transform.parent = null;
 				}
             }
 
